@@ -10,7 +10,7 @@
   --social-icons-color: #afb1b8;
   --footer-icons-color: rgba(255, 255, 255, 0.1);
   --backdrop-color:rgba(0, 0, 0, 0.2);
-  --timing-funcrion: cubic-bezier(0.4, 0, 0.2, 1);
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --overlay-color: rgba(33, 150, 243, 0.9);
 }
 
@@ -140,7 +140,7 @@ font-family: 'Raleway';
   letter-spacing: 0.02em;
   
 
-  transition: color 250ms var(--timing-funcrion);
+  transition: color 250ms var(--timing-function);
 }
 
 .site-nav .link::after {
@@ -156,7 +156,7 @@ font-family: 'Raleway';
 
   opacity: 0;
 
-  transition: opacity 250ms var(--timing-funcrion);
+  transition: opacity 250ms var(--timing-function);
 
 }
 
@@ -213,7 +213,7 @@ font-family: 'Raleway';
     line-height: 1.14;
     letter-spacing: 0.02em;
 
-    transition: color 250ms var(--timing-funcrion);
+    transition: color 250ms var(--timing-function);
 }
 
 .contacts-nav .link:hover,
@@ -286,23 +286,31 @@ font-family: 'Raleway';
   height: 100%;
   background-color: var(--backdrop-color);
   opacity: 1;
-  transition: opacity 250ms var(--timing-funcrion);
+  transition: opacity 250ms var(--timing-function);
 }
 
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-function);
   width: 528px;
   height: 581px;
 
   background-color: var(--white-color);
+
+  
   
 
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+  
 }
 
 .backdrop.is-hidden{
@@ -477,8 +485,8 @@ color: var(--white-color);
   color: var(--social-icons-color);
   background-color: var(--white-color);
   
-  transition: color 250ms var(--timing-funcrion), 
-  background-color 250ms var(--timing-funcrion);
+  transition: color 250ms var(--timing-function), 
+  background-color 250ms var(--timing-function);
 
 }
 
@@ -607,8 +615,8 @@ fill: var(--white-color);
   border-radius: 4px;
   color: var(--social-icons-color);
 
-  transition: color 250ms var(--timing-funcrion),
-   border 250ms var(--timing-funcrion);
+  transition: color 250ms var(--timing-function),
+   border 250ms var(--timing-function);
 }
 
 .customers-item{
@@ -718,7 +726,7 @@ fill: var(--white-color);
   color: var(--white-color);
   background-color: var(--footer-icons-color);
 
-  transition: background-color 250ms var(--timing-funcrion);
+  transition: background-color 250ms var(--timing-function);
 
 }
 
@@ -775,9 +783,9 @@ margin-right: 10px;
   letter-spacing: 0.03em;
   box-shadow: 0px;
 
-  transition: color 250ms var(--timing-funcrion),
-   background-color 250ms var(--timing-funcrion),
-   box-shadow 250ms var(--timing-funcrion) ;
+  transition: color 250ms var(--timing-function),
+   background-color 250ms var(--timing-function),
+   box-shadow 250ms var(--timing-funcrtion) ;
 
 }
 
@@ -846,7 +854,7 @@ color: var(--primary-color-text);
 
   box-shadow: 0;
 
-  transition: box-shadow 250ms var(--timing-funcrion);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .work-overlay{
@@ -863,7 +871,7 @@ overflow: hidden;
  background-color: var(--overlay-color);
 
  transform: translateY(100%);
- transition: transform  250ms var(--timing-funcrion);
+ transition: transform  250ms var(--timing-function);
 
 }
 
